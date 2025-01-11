@@ -1,0 +1,11 @@
+# Title: Confirmation Rate
+# Submission ID: 1494984583
+# Status: Wrong Answer
+# Date: January 2, 2025 at 04:00:12 PM GMT+5:30
+
+# Write your MySQL query statement below
+select s.user_id, coalesce(count(case when c.action = 'confirmed' then 1 end)*1.0/nullif(count(c.action),0),0) as confirmation_rate
+from signups s
+left join confirmations c
+using(user_id)
+group by c.user_id

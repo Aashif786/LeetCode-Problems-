@@ -1,0 +1,15 @@
+# Title: Monthly Transactions I
+# Submission ID: 1494798926
+# Status: Wrong Answer
+# Date: January 2, 2025 at 12:06:43 PM GMT+5:30
+
+select substring(trans_date,1,7)as month,
+country,
+count(state) as trans_count,
+1  as approved_count,
+sum(amount) as trans_total_amount,
+sum(case when state='approved' then amount end) as approved_total_amount
+
+from transactions
+
+group by country , state ;

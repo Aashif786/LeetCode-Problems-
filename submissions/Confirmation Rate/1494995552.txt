@@ -1,0 +1,15 @@
+# Title: Confirmation Rate
+# Submission ID: 1494995552
+# Status: Wrong Answer
+# Date: January 2, 2025 at 04:14:35 PM GMT+5:30
+
+# Write your MySQL query statement below
+select s.user_id,
+    case 
+        when c.user_id is null then 0 
+        else round(sum(c.action = 'confirmed')/count(c.user_id),2) 
+    end as confirmation_rate
+from signups s
+left join confirmations c
+using(user_id)
+group by c.user_id;

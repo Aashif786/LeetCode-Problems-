@@ -1,0 +1,9 @@
+# Title: Queries Quality and Percentage
+# Submission ID: 1494776987
+# Status: Accepted
+# Date: January 2, 2025 at 11:42:47 AM GMT+5:30
+
+# Write your MySQL query statement below
+select query_name ,round(avg(rating/position),2) as quality ,round(100*(sum(rating<3)/count(*)),2) as poor_query_percentage 
+from queries
+group by query_name;

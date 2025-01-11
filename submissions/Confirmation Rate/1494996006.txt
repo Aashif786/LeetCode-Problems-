@@ -1,0 +1,19 @@
+# Title: Confirmation Rate
+# Submission ID: 1494996006
+# Status: Accepted
+# Date: January 2, 2025 at 04:15:13 PM GMT+5:30
+
+SELECT 
+    A.user_id,
+    CASE
+        WHEN B.user_id IS NULL THEN 0
+        ELSE ROUND(SUM(B.action = 'confirmed') / COUNT(B.user_id), 2) 
+    END AS confirmation_rate
+FROM 
+    Signups A
+LEFT JOIN 
+    Confirmations B
+ON 
+    A.user_id = B.user_id
+GROUP BY 
+    A.user_id;

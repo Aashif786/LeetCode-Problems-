@@ -6,6 +6,7 @@ class Solution {
             nn[2*i]=nums[i];
             nn[2*i+1]=nums[n+i];
         }
+        System.gc();
         return nn;
     }
 }

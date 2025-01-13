@@ -1,0 +1,11 @@
+# Title: Create a DataFrame from List
+# Submission ID: 1507111958
+# Status: Accepted
+# Date: January 13, 2025 at 03:22:40 PM GMT+5:30
+
+import pandas as pd
+
+def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
+
+    df=pd.DataFrame(student_data,columns=['student_id','age'])
+    return df

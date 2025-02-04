@@ -11,6 +11,7 @@ class Solution {
                 if (count > 0) str+=")";
             }
         }
+        System.gc();
         return str;
     }
 }
